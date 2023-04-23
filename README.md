@@ -40,7 +40,11 @@ OnItemUseEventHandler OnItemUse;
 ------------------------------------------------------------------------
 ----------------------------Feature In Testing -------------------------
 ------------------------------------------------------------------------
-
+This allows the unique Feature Smithes Eyes to be useful.  When a player
+gets to a certain point, this unique feature activates.  What this means
+is all players cannot see each others armor stats or weapon stats by 
+default.  However if a player gets smithes eyes, then they can see the
+stats of the equipment player are wearing. 
 
 Add the below to all basearmor, jewel clothing and weapon
 		Locate this method
