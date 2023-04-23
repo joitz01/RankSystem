@@ -151,6 +151,43 @@ namespace Server
 				DB.fRankQuestCompleted += 1;
 			}
 		}
+		
+		public static void SkillStatCapUpdateE(Skill skill)
+		{
+			int ecap = 101;
+			if (ecap <= skill.Cap){return;}
+			else{skill.Cap = ecap;}
+		}
+		public static void SkillStatCapUpdateD(Skill skill)
+		{
+			int dcap = 105;
+			if (dcap <= skill.Cap){return;}
+			else{skill.Cap = dcap;}
+		}
+		public static void SkillStatCapUpdateC(Skill skill)
+		{
+			int ccap = 108;
+			if (ccap <= skill.Cap){return;}
+			else{skill.Cap = ccap;}
+		}
+		public static void SkillStatCapUpdateB(Skill skill)
+		{
+			int bcap = 112;
+			if (bcap <= skill.Cap){return;}
+			else{skill.Cap = bcap;}
+		}
+		public static void SkillStatCapUpdateA(Skill skill)
+		{
+			int acap = 117;
+			if (acap <= skill.Cap){return;}
+			else{skill.Cap = acap;}
+		}
+		public static void SkillStatCapUpdateS(Skill skill)
+		{
+			int scap = 120;
+			if (scap <= skill.Cap){return;}
+			else{skill.Cap = scap;}
+		}
 
 		public static void RankSkillStatCheck (Mobile from, RankDatabase DB)
 		{
@@ -177,22 +214,22 @@ namespace Server
 				
 				SkillName skillName = skill.SkillName;
 				
-				if (DB.RankAlchemy == "F") {DB.RankAlchemy = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankAlchemy == "F") {DB.RankAlchemy = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankAlchemy == "E") {DB.RankAlchemy = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankAlchemy == "E") {DB.RankAlchemy = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankAlchemy == "D") {DB.RankAlchemy = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankAlchemy == "D") {DB.RankAlchemy = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankAlchemy == "C") {DB.RankAlchemy = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankAlchemy == "C") {DB.RankAlchemy = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankAlchemy == "B") {DB.RankAlchemy = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankAlchemy == "B") {DB.RankAlchemy = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankAlchemy == "A") {DB.RankAlchemy = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankAlchemy == "A") {DB.RankAlchemy = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -207,22 +244,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Blacksmith];
 				int skillvalue = DB.SkillrankexpBlacksmith;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankBlacksmith == "F") {DB.RankBlacksmith = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankBlacksmith == "F") {DB.RankBlacksmith = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankBlacksmith == "E") {DB.RankBlacksmith = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankBlacksmith == "E") {DB.RankBlacksmith = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankBlacksmith == "D") {DB.RankBlacksmith = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankBlacksmith == "D") {DB.RankBlacksmith = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankBlacksmith == "C") {DB.RankBlacksmith = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankBlacksmith == "C") {DB.RankBlacksmith = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankBlacksmith == "B") {DB.RankBlacksmith = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankBlacksmith == "B") {DB.RankBlacksmith = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankBlacksmith == "A") {DB.RankBlacksmith = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankBlacksmith == "A") {DB.RankBlacksmith = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -237,22 +274,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Cartography];
 				int skillvalue = DB.SkillrankexpCartography;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankCartography == "F") {DB.RankCartography = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankCartography == "F") {DB.RankCartography = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankCartography == "E") {DB.RankCartography = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankCartography == "E") {DB.RankCartography = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankCartography == "D") {DB.RankCartography = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankCartography == "D") {DB.RankCartography = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankCartography == "C") {DB.RankCartography = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankCartography == "C") {DB.RankCartography = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankCartography == "B") {DB.RankCartography = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankCartography == "B") {DB.RankCartography = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankCartography == "A") {DB.RankCartography = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankCartography == "A") {DB.RankCartography = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -267,22 +304,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Carpentry];
 				int skillvalue = DB.SkillrankexpCarpentry;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankCarpentry == "F") {DB.RankCarpentry = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankCarpentry == "F") {DB.RankCarpentry = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankCarpentry == "E") {DB.RankCarpentry = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankCarpentry == "E") {DB.RankCarpentry = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankCarpentry == "D") {DB.RankCarpentry = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankCarpentry == "D") {DB.RankCarpentry = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankCarpentry == "C") {DB.RankCarpentry = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankCarpentry == "C") {DB.RankCarpentry = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankCarpentry == "B") {DB.RankCarpentry = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankCarpentry == "B") {DB.RankCarpentry = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankCarpentry == "A") {DB.RankCarpentry = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankCarpentry == "A") {DB.RankCarpentry = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -297,22 +334,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Cooking];
 				int skillvalue = DB.SkillrankexpCooking;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankCooking == "F") {DB.RankCooking = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankCooking == "F") {DB.RankCooking = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankCooking == "E") {DB.RankCooking = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankCooking == "E") {DB.RankCooking = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankCooking == "D") {DB.RankCooking = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankCooking == "D") {DB.RankCooking = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankCooking == "C") {DB.RankCooking = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankCooking == "C") {DB.RankCooking = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankCooking == "B") {DB.RankCooking = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankCooking == "B") {DB.RankCooking = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankCooking == "A") {DB.RankCooking = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankCooking == "A") {DB.RankCooking = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -327,22 +364,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Fletching];
 				int skillvalue = DB.SkillrankexpFletching;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankFletching == "F") {DB.RankFletching = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankFletching == "F") {DB.RankFletching = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankFletching == "E") {DB.RankFletching = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankFletching == "E") {DB.RankFletching = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankFletching == "D") {DB.RankFletching = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankFletching == "D") {DB.RankFletching = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankFletching == "C") {DB.RankFletching = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankFletching == "C") {DB.RankFletching = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankFletching == "B") {DB.RankFletching = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankFletching == "B") {DB.RankFletching = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankFletching == "A") {DB.RankFletching = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankFletching == "A") {DB.RankFletching = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -357,22 +394,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Inscribe];
 				int skillvalue = DB.SkillrankexpInscribe;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankInscribe == "F") {DB.RankInscribe = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankInscribe == "F") {DB.RankInscribe = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankInscribe == "E") {DB.RankInscribe = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankInscribe == "E") {DB.RankInscribe = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankInscribe == "D") {DB.RankInscribe = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankInscribe == "D") {DB.RankInscribe = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankInscribe == "C") {DB.RankInscribe = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankInscribe == "C") {DB.RankInscribe = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankInscribe == "B") {DB.RankInscribe = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankInscribe == "B") {DB.RankInscribe = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankInscribe == "A") {DB.RankInscribe = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankInscribe == "A") {DB.RankInscribe = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -387,22 +424,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Tailoring];
 				int skillvalue = DB.SkillrankexpTailoring;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankTailoring == "F") {DB.RankTailoring = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankTailoring == "F") {DB.RankTailoring = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankTailoring == "E") {DB.RankTailoring = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankTailoring == "E") {DB.RankTailoring = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankTailoring == "D") {DB.RankTailoring = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankTailoring == "D") {DB.RankTailoring = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankTailoring == "C") {DB.RankTailoring = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankTailoring == "C") {DB.RankTailoring = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankTailoring == "B") {DB.RankTailoring = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankTailoring == "B") {DB.RankTailoring = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankTailoring == "A") {DB.RankTailoring = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankTailoring == "A") {DB.RankTailoring = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -417,22 +454,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Tinkering];
 				int skillvalue = DB.SkillrankexpTinkering;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankTinkering == "F") {DB.RankTinkering = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankTinkering == "F") {DB.RankTinkering = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankTinkering == "E") {DB.RankTinkering = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankTinkering == "E") {DB.RankTinkering = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankTinkering == "D") {DB.RankTinkering = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankTinkering == "D") {DB.RankTinkering = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankTinkering == "C") {DB.RankTinkering = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankTinkering == "C") {DB.RankTinkering = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankTinkering == "B") {DB.RankTinkering = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankTinkering == "B") {DB.RankTinkering = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankTinkering == "A") {DB.RankTinkering = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankTinkering == "A") {DB.RankTinkering = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -447,22 +484,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Discordance];
 				int skillvalue = DB.SkillrankexpDiscordance;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankDiscordance == "F") {DB.RankDiscordance = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankDiscordance == "F") {DB.RankDiscordance = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankDiscordance == "E") {DB.RankDiscordance = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankDiscordance == "E") {DB.RankDiscordance = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankDiscordance == "D") {DB.RankDiscordance = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankDiscordance == "D") {DB.RankDiscordance = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankDiscordance == "C") {DB.RankDiscordance = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankDiscordance == "C") {DB.RankDiscordance = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankDiscordance == "B") {DB.RankDiscordance = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankDiscordance == "B") {DB.RankDiscordance = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankDiscordance == "A") {DB.RankDiscordance = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankDiscordance == "A") {DB.RankDiscordance = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -477,22 +514,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Musicianship];
 				int skillvalue = DB.SkillrankexpMusicianship;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankMusicianship == "F") {DB.RankMusicianship = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankMusicianship == "F") {DB.RankMusicianship = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankMusicianship == "E") {DB.RankMusicianship = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankMusicianship == "E") {DB.RankMusicianship = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankMusicianship == "D") {DB.RankMusicianship = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankMusicianship == "D") {DB.RankMusicianship = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankMusicianship == "C") {DB.RankMusicianship = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankMusicianship == "C") {DB.RankMusicianship = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankMusicianship == "B") {DB.RankMusicianship = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankMusicianship == "B") {DB.RankMusicianship = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankMusicianship == "A") {DB.RankMusicianship = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankMusicianship == "A") {DB.RankMusicianship = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -507,22 +544,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Peacemaking];
 				int skillvalue = DB.SkillrankexpPeacemaking;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankPeacemaking == "F") {DB.RankPeacemaking = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankPeacemaking == "F") {DB.RankPeacemaking = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankPeacemaking == "E") {DB.RankPeacemaking = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankPeacemaking == "E") {DB.RankPeacemaking = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankPeacemaking == "D") {DB.RankPeacemaking = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankPeacemaking == "D") {DB.RankPeacemaking = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankPeacemaking == "C") {DB.RankPeacemaking = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankPeacemaking == "C") {DB.RankPeacemaking = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankPeacemaking == "B") {DB.RankPeacemaking = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankPeacemaking == "B") {DB.RankPeacemaking = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankPeacemaking == "A") {DB.RankPeacemaking = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankPeacemaking == "A") {DB.RankPeacemaking = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -537,22 +574,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Provocation];
 				int skillvalue = DB.SkillrankexpProvocation;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankProvocation == "F") {DB.RankProvocation = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankProvocation == "F") {DB.RankProvocation = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankProvocation == "E") {DB.RankProvocation = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankProvocation == "E") {DB.RankProvocation = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankProvocation == "D") {DB.RankProvocation = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankProvocation == "D") {DB.RankProvocation = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankProvocation == "C") {DB.RankProvocation = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankProvocation == "C") {DB.RankProvocation = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankProvocation == "B") {DB.RankProvocation = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankProvocation == "B") {DB.RankProvocation = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankProvocation == "A") {DB.RankProvocation = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankProvocation == "A") {DB.RankProvocation = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -567,22 +604,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Chivalry];
 				int skillvalue = DB.SkillrankexpChivalry;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankChivalry == "F") {DB.RankChivalry = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankChivalry == "F") {DB.RankChivalry = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankChivalry == "E") {DB.RankChivalry = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankChivalry == "E") {DB.RankChivalry = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankChivalry == "D") {DB.RankChivalry = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankChivalry == "D") {DB.RankChivalry = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankChivalry == "C") {DB.RankChivalry = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankChivalry == "C") {DB.RankChivalry = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankChivalry == "B") {DB.RankChivalry = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankChivalry == "B") {DB.RankChivalry = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankChivalry == "A") {DB.RankChivalry = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankChivalry == "A") {DB.RankChivalry = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -597,22 +634,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.EvalInt];
 				int skillvalue = DB.SkillrankexpEvalInt;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankEvalInt == "F") {DB.RankEvalInt = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankEvalInt == "F") {DB.RankEvalInt = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankEvalInt == "E") {DB.RankEvalInt = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankEvalInt == "E") {DB.RankEvalInt = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankEvalInt == "D") {DB.RankEvalInt = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankEvalInt == "D") {DB.RankEvalInt = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankEvalInt == "C") {DB.RankEvalInt = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankEvalInt == "C") {DB.RankEvalInt = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankEvalInt == "B") {DB.RankEvalInt = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankEvalInt == "B") {DB.RankEvalInt = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankEvalInt == "A") {DB.RankEvalInt = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankEvalInt == "A") {DB.RankEvalInt = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -627,22 +664,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Magery];
 				int skillvalue = DB.SkillrankexpMagery;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankMagery == "F") {DB.RankMagery = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankMagery == "F") {DB.RankMagery = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankMagery == "E") {DB.RankMagery = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankMagery == "E") {DB.RankMagery = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankMagery == "D") {DB.RankMagery = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankMagery == "D") {DB.RankMagery = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankMagery == "C") {DB.RankMagery = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankMagery == "C") {DB.RankMagery = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankMagery == "B") {DB.RankMagery = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankMagery == "B") {DB.RankMagery = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankMagery == "A") {DB.RankMagery = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankMagery == "A") {DB.RankMagery = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -657,22 +694,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.MagicResist];
 				int skillvalue = DB.SkillrankexpMagicResist;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankMagicResist == "F") {DB.RankMagicResist = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankMagicResist == "F") {DB.RankMagicResist = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankMagicResist == "E") {DB.RankMagicResist = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankMagicResist == "E") {DB.RankMagicResist = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankMagicResist == "D") {DB.RankMagicResist = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankMagicResist == "D") {DB.RankMagicResist = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankMagicResist == "C") {DB.RankMagicResist = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankMagicResist == "C") {DB.RankMagicResist = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankMagicResist == "B") {DB.RankMagicResist = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankMagicResist == "B") {DB.RankMagicResist = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankMagicResist == "A") {DB.RankMagicResist = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankMagicResist == "A") {DB.RankMagicResist = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -687,22 +724,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Meditation];
 				int skillvalue = DB.SkillrankexpMeditation;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankMeditation == "F") {DB.RankMeditation = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankMeditation == "F") {DB.RankMeditation = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankMeditation == "E") {DB.RankMeditation = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankMeditation == "E") {DB.RankMeditation = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankMeditation == "D") {DB.RankMeditation = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankMeditation == "D") {DB.RankMeditation = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankMeditation == "C") {DB.RankMeditation = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankMeditation == "C") {DB.RankMeditation = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankMeditation == "B") {DB.RankMeditation = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankMeditation == "B") {DB.RankMeditation = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankMeditation == "A") {DB.RankMeditation = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankMeditation == "A") {DB.RankMeditation = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -717,22 +754,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Necromancy];
 				int skillvalue = DB.SkillrankexpNecromancy;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankNecromancy == "F") {DB.RankNecromancy = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankNecromancy == "F") {DB.RankNecromancy = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankNecromancy == "E") {DB.RankNecromancy = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankNecromancy == "E") {DB.RankNecromancy = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankNecromancy == "D") {DB.RankNecromancy = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankNecromancy == "D") {DB.RankNecromancy = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankNecromancy == "C") {DB.RankNecromancy = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankNecromancy == "C") {DB.RankNecromancy = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankNecromancy == "B") {DB.RankNecromancy = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankNecromancy == "B") {DB.RankNecromancy = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankNecromancy == "A") {DB.RankNecromancy = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankNecromancy == "A") {DB.RankNecromancy = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -747,22 +784,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.SpiritSpeak];
 				int skillvalue = DB.SkillrankexpSpiritSpeak;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankSpiritSpeak == "F") {DB.RankSpiritSpeak = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankSpiritSpeak == "F") {DB.RankSpiritSpeak = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankSpiritSpeak == "E") {DB.RankSpiritSpeak = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankSpiritSpeak == "E") {DB.RankSpiritSpeak = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankSpiritSpeak == "D") {DB.RankSpiritSpeak = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankSpiritSpeak == "D") {DB.RankSpiritSpeak = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankSpiritSpeak == "C") {DB.RankSpiritSpeak = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankSpiritSpeak == "C") {DB.RankSpiritSpeak = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankSpiritSpeak == "B") {DB.RankSpiritSpeak = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankSpiritSpeak == "B") {DB.RankSpiritSpeak = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankSpiritSpeak == "A") {DB.RankSpiritSpeak = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankSpiritSpeak == "A") {DB.RankSpiritSpeak = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -777,22 +814,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Ninjitsu];
 				int skillvalue = DB.SkillrankexpNinjitsu;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankNinjitsu == "F") {DB.RankNinjitsu = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankNinjitsu == "F") {DB.RankNinjitsu = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankNinjitsu == "E") {DB.RankNinjitsu = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankNinjitsu == "E") {DB.RankNinjitsu = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankNinjitsu == "D") {DB.RankNinjitsu = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankNinjitsu == "D") {DB.RankNinjitsu = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankNinjitsu == "C") {DB.RankNinjitsu = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankNinjitsu == "C") {DB.RankNinjitsu = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankNinjitsu == "B") {DB.RankNinjitsu = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankNinjitsu == "B") {DB.RankNinjitsu = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankNinjitsu == "A") {DB.RankNinjitsu = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankNinjitsu == "A") {DB.RankNinjitsu = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -807,22 +844,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Bushido];
 				int skillvalue = DB.SkillrankexpBushido;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankBushido == "F") {DB.RankBushido = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankBushido == "F") {DB.RankBushido = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankBushido == "E") {DB.RankBushido = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankBushido == "E") {DB.RankBushido = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankBushido == "D") {DB.RankBushido = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankBushido == "D") {DB.RankBushido = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankBushido == "C") {DB.RankBushido = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankBushido == "C") {DB.RankBushido = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankBushido == "B") {DB.RankBushido = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankBushido == "B") {DB.RankBushido = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankBushido == "A") {DB.RankBushido = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankBushido == "A") {DB.RankBushido = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -837,22 +874,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Spellweaving];
 				int skillvalue = DB.SkillrankexpSpellweaving;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankSpellweaving == "F") {DB.RankSpellweaving = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankSpellweaving == "F") {DB.RankSpellweaving = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankSpellweaving == "E") {DB.RankSpellweaving = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankSpellweaving == "E") {DB.RankSpellweaving = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankSpellweaving == "D") {DB.RankSpellweaving = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankSpellweaving == "D") {DB.RankSpellweaving = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankSpellweaving == "C") {DB.RankSpellweaving = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankSpellweaving == "C") {DB.RankSpellweaving = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankSpellweaving == "B") {DB.RankSpellweaving = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankSpellweaving == "B") {DB.RankSpellweaving = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankSpellweaving == "A") {DB.RankSpellweaving = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankSpellweaving == "A") {DB.RankSpellweaving = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -867,22 +904,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Camping];
 				int skillvalue = DB.SkillrankexpCamping;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankCamping == "F") {DB.RankCamping = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankCamping == "F") {DB.RankCamping = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankCamping == "E") {DB.RankCamping = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankCamping == "E") {DB.RankCamping = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankCamping == "D") {DB.RankCamping = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankCamping == "D") {DB.RankCamping = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankCamping == "C") {DB.RankCamping = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankCamping == "C") {DB.RankCamping = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankCamping == "B") {DB.RankCamping = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankCamping == "B") {DB.RankCamping = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankCamping == "A") {DB.RankCamping = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankCamping == "A") {DB.RankCamping = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -897,22 +934,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Fishing];
 				int skillvalue = DB.SkillrankexpFishing;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankFishing == "F") {DB.RankFishing = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankFishing == "F") {DB.RankFishing = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankFishing == "E") {DB.RankFishing = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankFishing == "E") {DB.RankFishing = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankFishing == "D") {DB.RankFishing = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankFishing == "D") {DB.RankFishing = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankFishing == "C") {DB.RankFishing = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankFishing == "C") {DB.RankFishing = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankFishing == "B") {DB.RankFishing = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankFishing == "B") {DB.RankFishing = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankFishing == "A") {DB.RankFishing = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankFishing == "A") {DB.RankFishing = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -927,22 +964,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Focus];
 				int skillvalue = DB.SkillrankexpFocus;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankFocus == "F") {DB.RankFocus = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankFocus == "F") {DB.RankFocus = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankFocus == "E") {DB.RankFocus = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankFocus == "E") {DB.RankFocus = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankFocus == "D") {DB.RankFocus = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankFocus == "D") {DB.RankFocus = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankFocus == "C") {DB.RankFocus = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankFocus == "C") {DB.RankFocus = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankFocus == "B") {DB.RankFocus = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankFocus == "B") {DB.RankFocus = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankFocus == "A") {DB.RankFocus = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankFocus == "A") {DB.RankFocus = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -957,22 +994,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Healing];
 				int skillvalue = DB.SkillrankexpHealing;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankHealing == "F") {DB.RankHealing = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankHealing == "F") {DB.RankHealing = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankHealing == "E") {DB.RankHealing = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankHealing == "E") {DB.RankHealing = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankHealing == "D") {DB.RankHealing = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankHealing == "D") {DB.RankHealing = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankHealing == "C") {DB.RankHealing = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankHealing == "C") {DB.RankHealing = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankHealing == "B") {DB.RankHealing = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankHealing == "B") {DB.RankHealing = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankHealing == "A") {DB.RankHealing = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankHealing == "A") {DB.RankHealing = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -987,22 +1024,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Herding];
 				int skillvalue = DB.SkillrankexpHerding;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankHerding == "F") {DB.RankHerding = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankHerding == "F") {DB.RankHerding = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankHerding == "E") {DB.RankHerding = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankHerding == "E") {DB.RankHerding = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankHerding == "D") {DB.RankHerding = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankHerding == "D") {DB.RankHerding = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankHerding == "C") {DB.RankHerding = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankHerding == "C") {DB.RankHerding = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankHerding == "B") {DB.RankHerding = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankHerding == "B") {DB.RankHerding = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankHerding == "A") {DB.RankHerding = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankHerding == "A") {DB.RankHerding = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1017,22 +1054,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Lockpicking];
 				int skillvalue = DB.SkillrankexpLockpicking;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankLockpicking == "F") {DB.RankLockpicking = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankLockpicking == "F") {DB.RankLockpicking = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankLockpicking == "E") {DB.RankLockpicking = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankLockpicking == "E") {DB.RankLockpicking = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankLockpicking == "D") {DB.RankLockpicking = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankLockpicking == "D") {DB.RankLockpicking = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankLockpicking == "C") {DB.RankLockpicking = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankLockpicking == "C") {DB.RankLockpicking = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankLockpicking == "B") {DB.RankLockpicking = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankLockpicking == "B") {DB.RankLockpicking = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankLockpicking == "A") {DB.RankLockpicking = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankLockpicking == "A") {DB.RankLockpicking = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1047,22 +1084,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Lumberjacking];
 				int skillvalue = DB.SkillrankexpLumberjacking;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankLumberjacking == "F") {DB.RankLumberjacking = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankLumberjacking == "F") {DB.RankLumberjacking = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankLumberjacking == "E") {DB.RankLumberjacking = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankLumberjacking == "E") {DB.RankLumberjacking = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankLumberjacking == "D") {DB.RankLumberjacking = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankLumberjacking == "D") {DB.RankLumberjacking = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankLumberjacking == "C") {DB.RankLumberjacking = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankLumberjacking == "C") {DB.RankLumberjacking = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankLumberjacking == "B") {DB.RankLumberjacking = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankLumberjacking == "B") {DB.RankLumberjacking = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankLumberjacking == "A") {DB.RankLumberjacking = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankLumberjacking == "A") {DB.RankLumberjacking = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1077,22 +1114,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Mining];
 				int skillvalue = DB.SkillrankexpMining;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankMining == "F") {DB.RankMining = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankMining == "F") {DB.RankMining = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankMining == "E") {DB.RankMining = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankMining == "E") {DB.RankMining = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankMining == "D") {DB.RankMining = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankMining == "D") {DB.RankMining = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankMining == "C") {DB.RankMining = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankMining == "C") {DB.RankMining = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankMining == "B") {DB.RankMining = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankMining == "B") {DB.RankMining = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankMining == "A") {DB.RankMining = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankMining == "A") {DB.RankMining = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1107,22 +1144,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Snooping];
 				int skillvalue = DB.SkillrankexpSnooping;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankSnooping == "F") {DB.RankSnooping = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankSnooping == "F") {DB.RankSnooping = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankSnooping == "E") {DB.RankSnooping = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankSnooping == "E") {DB.RankSnooping = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankSnooping == "D") {DB.RankSnooping = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankSnooping == "D") {DB.RankSnooping = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankSnooping == "C") {DB.RankSnooping = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankSnooping == "C") {DB.RankSnooping = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankSnooping == "B") {DB.RankSnooping = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankSnooping == "B") {DB.RankSnooping = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankSnooping == "A") {DB.RankSnooping = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankSnooping == "A") {DB.RankSnooping = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1137,22 +1174,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Veterinary];
 				int skillvalue = DB.SkillrankexpVeterinary;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankVeterinary == "F") {DB.RankVeterinary = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankVeterinary == "F") {DB.RankVeterinary = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankVeterinary == "E") {DB.RankVeterinary = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankVeterinary == "E") {DB.RankVeterinary = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankVeterinary == "D") {DB.RankVeterinary = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankVeterinary == "D") {DB.RankVeterinary = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankVeterinary == "C") {DB.RankVeterinary = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankVeterinary == "C") {DB.RankVeterinary = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankVeterinary == "B") {DB.RankVeterinary = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankVeterinary == "B") {DB.RankVeterinary = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankVeterinary == "A") {DB.RankVeterinary = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankVeterinary == "A") {DB.RankVeterinary = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1167,22 +1204,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Archery];
 				int skillvalue = DB.SkillrankexpArchery;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankArchery == "F") {DB.RankArchery = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankArchery == "F") {DB.RankArchery = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankArchery == "E") {DB.RankArchery = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankArchery == "E") {DB.RankArchery = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankArchery == "D") {DB.RankArchery = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankArchery == "D") {DB.RankArchery = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankArchery == "C") {DB.RankArchery = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankArchery == "C") {DB.RankArchery = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankArchery == "B") {DB.RankArchery = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankArchery == "B") {DB.RankArchery = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankArchery == "A") {DB.RankArchery = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankArchery == "A") {DB.RankArchery = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1197,22 +1234,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Fencing];
 				int skillvalue = DB.SkillrankexpFencing;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankFencing == "F") {DB.RankFencing = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankFencing == "F") {DB.RankFencing = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankFencing == "E") {DB.RankFencing = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankFencing == "E") {DB.RankFencing = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankFencing == "D") {DB.RankFencing = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankFencing == "D") {DB.RankFencing = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankFencing == "C") {DB.RankFencing = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankFencing == "C") {DB.RankFencing = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankFencing == "B") {DB.RankFencing = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankFencing == "B") {DB.RankFencing = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankFencing == "A") {DB.RankFencing = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankFencing == "A") {DB.RankFencing = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1227,22 +1264,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Macing];
 				int skillvalue = DB.SkillrankexpMacing;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankMacing == "F") {DB.RankMacing = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankMacing == "F") {DB.RankMacing = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankMacing == "E") {DB.RankMacing = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankMacing == "E") {DB.RankMacing = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankMacing == "D") {DB.RankMacing = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankMacing == "D") {DB.RankMacing = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankMacing == "C") {DB.RankMacing = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankMacing == "C") {DB.RankMacing = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankMacing == "B") {DB.RankMacing = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankMacing == "B") {DB.RankMacing = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankMacing == "A") {DB.RankMacing = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankMacing == "A") {DB.RankMacing = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1257,22 +1294,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Parry];
 				int skillvalue = DB.SkillrankexpParry;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankParry == "F") {DB.RankParry = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankParry == "F") {DB.RankParry = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankParry == "E") {DB.RankParry = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankParry == "E") {DB.RankParry = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankParry == "D") {DB.RankParry = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankParry == "D") {DB.RankParry = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankParry == "C") {DB.RankParry = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankParry == "C") {DB.RankParry = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankParry == "B") {DB.RankParry = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankParry == "B") {DB.RankParry = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankParry == "A") {DB.RankParry = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankParry == "A") {DB.RankParry = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1287,22 +1324,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Swords];
 				int skillvalue = DB.SkillrankexpSwords;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankSwords == "F") {DB.RankSwords = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankSwords == "F") {DB.RankSwords = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankSwords == "E") {DB.RankSwords = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankSwords == "E") {DB.RankSwords = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankSwords == "D") {DB.RankSwords = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankSwords == "D") {DB.RankSwords = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankSwords == "C") {DB.RankSwords = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankSwords == "C") {DB.RankSwords = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankSwords == "B") {DB.RankSwords = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankSwords == "B") {DB.RankSwords = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankSwords == "A") {DB.RankSwords = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankSwords == "A") {DB.RankSwords = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1317,22 +1354,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Tactics];
 				int skillvalue = DB.SkillrankexpTactics;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankTactics == "F") {DB.RankTactics = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankTactics == "F") {DB.RankTactics = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankTactics == "E") {DB.RankTactics = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankTactics == "E") {DB.RankTactics = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankTactics == "D") {DB.RankTactics = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankTactics == "D") {DB.RankTactics = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankTactics == "C") {DB.RankTactics = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankTactics == "C") {DB.RankTactics = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankTactics == "B") {DB.RankTactics = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankTactics == "B") {DB.RankTactics = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankTactics == "A") {DB.RankTactics = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankTactics == "A") {DB.RankTactics = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1347,22 +1384,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Wrestling];
 				int skillvalue = DB.SkillrankexpWrestling;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankWrestling == "F") {DB.RankWrestling = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankWrestling == "F") {DB.RankWrestling = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankWrestling == "E") {DB.RankWrestling = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankWrestling == "E") {DB.RankWrestling = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankWrestling == "D") {DB.RankWrestling = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankWrestling == "D") {DB.RankWrestling = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankWrestling == "C") {DB.RankWrestling = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankWrestling == "C") {DB.RankWrestling = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankWrestling == "B") {DB.RankWrestling = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankWrestling == "B") {DB.RankWrestling = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankWrestling == "A") {DB.RankWrestling = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankWrestling == "A") {DB.RankWrestling = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1377,22 +1414,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.AnimalTaming];
 				int skillvalue = DB.SkillrankexpAnimalTaming;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankAnimalTaming == "F") {DB.RankAnimalTaming = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankAnimalTaming == "F") {DB.RankAnimalTaming = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankAnimalTaming == "E") {DB.RankAnimalTaming = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankAnimalTaming == "E") {DB.RankAnimalTaming = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankAnimalTaming == "D") {DB.RankAnimalTaming = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankAnimalTaming == "D") {DB.RankAnimalTaming = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankAnimalTaming == "C") {DB.RankAnimalTaming = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankAnimalTaming == "C") {DB.RankAnimalTaming = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankAnimalTaming == "B") {DB.RankAnimalTaming = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankAnimalTaming == "B") {DB.RankAnimalTaming = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankAnimalTaming == "A") {DB.RankAnimalTaming = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankAnimalTaming == "A") {DB.RankAnimalTaming = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1407,22 +1444,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Begging];
 				int skillvalue = DB.SkillrankexpBegging;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankBegging == "F") {DB.RankBegging = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankBegging == "F") {DB.RankBegging = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankBegging == "E") {DB.RankBegging = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankBegging == "E") {DB.RankBegging = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankBegging == "D") {DB.RankBegging = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankBegging == "D") {DB.RankBegging = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankBegging == "C") {DB.RankBegging = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankBegging == "C") {DB.RankBegging = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankBegging == "B") {DB.RankBegging = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankBegging == "B") {DB.RankBegging = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankBegging == "A") {DB.RankBegging = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankBegging == "A") {DB.RankBegging = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1437,22 +1474,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.DetectHidden];
 				int skillvalue = DB.SkillrankexpDetectHidden;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankDetectHidden == "F") {DB.RankDetectHidden = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankDetectHidden == "F") {DB.RankDetectHidden = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankDetectHidden == "E") {DB.RankDetectHidden = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankDetectHidden == "E") {DB.RankDetectHidden = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankDetectHidden == "D") {DB.RankDetectHidden = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankDetectHidden == "D") {DB.RankDetectHidden = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankDetectHidden == "C") {DB.RankDetectHidden = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankDetectHidden == "C") {DB.RankDetectHidden = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankDetectHidden == "B") {DB.RankDetectHidden = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankDetectHidden == "B") {DB.RankDetectHidden = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankDetectHidden == "A") {DB.RankDetectHidden = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankDetectHidden == "A") {DB.RankDetectHidden = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1467,22 +1504,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Hiding];
 				int skillvalue = DB.SkillrankexpHiding;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankHiding == "F") {DB.RankHiding = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankHiding == "F") {DB.RankHiding = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankHiding == "E") {DB.RankHiding = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankHiding == "E") {DB.RankHiding = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankHiding == "D") {DB.RankHiding = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankHiding == "D") {DB.RankHiding = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankHiding == "C") {DB.RankHiding = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankHiding == "C") {DB.RankHiding = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankHiding == "B") {DB.RankHiding = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankHiding == "B") {DB.RankHiding = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankHiding == "A") {DB.RankHiding = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankHiding == "A") {DB.RankHiding = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1497,22 +1534,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.RemoveTrap];
 				int skillvalue = DB.SkillrankexpRemoveTrap;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankRemoveTrap == "F") {DB.RankRemoveTrap = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankRemoveTrap == "F") {DB.RankRemoveTrap = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankRemoveTrap == "E") {DB.RankRemoveTrap = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankRemoveTrap == "E") {DB.RankRemoveTrap = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankRemoveTrap == "D") {DB.RankRemoveTrap = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankRemoveTrap == "D") {DB.RankRemoveTrap = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankRemoveTrap == "C") {DB.RankRemoveTrap = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankRemoveTrap == "C") {DB.RankRemoveTrap = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankRemoveTrap == "B") {DB.RankRemoveTrap = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankRemoveTrap == "B") {DB.RankRemoveTrap = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankRemoveTrap == "A") {DB.RankRemoveTrap = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankRemoveTrap == "A") {DB.RankRemoveTrap = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1527,22 +1564,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Poisoning];
 				int skillvalue = DB.SkillrankexpPoisoning;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankPoisoning == "F") {DB.RankPoisoning = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankPoisoning == "F") {DB.RankPoisoning = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankPoisoning == "E") {DB.RankPoisoning = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankPoisoning == "E") {DB.RankPoisoning = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankPoisoning == "D") {DB.RankPoisoning = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankPoisoning == "D") {DB.RankPoisoning = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankPoisoning == "C") {DB.RankPoisoning = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankPoisoning == "C") {DB.RankPoisoning = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankPoisoning == "B") {DB.RankPoisoning = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankPoisoning == "B") {DB.RankPoisoning = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankPoisoning == "A") {DB.RankPoisoning = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankPoisoning == "A") {DB.RankPoisoning = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1557,22 +1594,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Stealing];
 				int skillvalue = DB.SkillrankexpStealing;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankStealing == "F") {DB.RankStealing = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankStealing == "F") {DB.RankStealing = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankStealing == "E") {DB.RankStealing = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankStealing == "E") {DB.RankStealing = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankStealing == "D") {DB.RankStealing = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankStealing == "D") {DB.RankStealing = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankStealing == "C") {DB.RankStealing = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankStealing == "C") {DB.RankStealing = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankStealing == "B") {DB.RankStealing = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankStealing == "B") {DB.RankStealing = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankStealing == "A") {DB.RankStealing = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankStealing == "A") {DB.RankStealing = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1587,22 +1624,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Stealth];
 				int skillvalue = DB.SkillrankexpStealth;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankStealth == "F") {DB.RankStealth = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankStealth == "F") {DB.RankStealth = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankStealth == "E") {DB.RankStealth = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankStealth == "E") {DB.RankStealth = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankStealth == "D") {DB.RankStealth = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankStealth == "D") {DB.RankStealth = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankStealth == "C") {DB.RankStealth = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankStealth == "C") {DB.RankStealth = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankStealth == "B") {DB.RankStealth = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankStealth == "B") {DB.RankStealth = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankStealth == "A") {DB.RankStealth = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankStealth == "A") {DB.RankStealth = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1617,22 +1654,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Tracking];
 				int skillvalue = DB.SkillrankexpTracking;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankTracking == "F") {DB.RankTracking = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankTracking == "F") {DB.RankTracking = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankTracking == "E") {DB.RankTracking = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankTracking == "E") {DB.RankTracking = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankTracking == "D") {DB.RankTracking = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankTracking == "D") {DB.RankTracking = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankTracking == "C") {DB.RankTracking = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankTracking == "C") {DB.RankTracking = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankTracking == "B") {DB.RankTracking = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankTracking == "B") {DB.RankTracking = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankTracking == "A") {DB.RankTracking = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankTracking == "A") {DB.RankTracking = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1647,22 +1684,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Anatomy];
 				int skillvalue = DB.SkillrankexpAnatomy;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankAnatomy == "F") {DB.RankAnatomy = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankAnatomy == "F") {DB.RankAnatomy = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankAnatomy == "E") {DB.RankAnatomy = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankAnatomy == "E") {DB.RankAnatomy = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankAnatomy == "D") {DB.RankAnatomy = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankAnatomy == "D") {DB.RankAnatomy = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankAnatomy == "C") {DB.RankAnatomy = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankAnatomy == "C") {DB.RankAnatomy = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankAnatomy == "B") {DB.RankAnatomy = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankAnatomy == "B") {DB.RankAnatomy = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankAnatomy == "A") {DB.RankAnatomy = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankAnatomy == "A") {DB.RankAnatomy = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1677,22 +1714,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.AnimalLore];
 				int skillvalue = DB.SkillrankexpAnimalLore;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankAnimalLore == "F") {DB.RankAnimalLore = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankAnimalLore == "F") {DB.RankAnimalLore = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankAnimalLore == "E") {DB.RankAnimalLore = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankAnimalLore == "E") {DB.RankAnimalLore = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankAnimalLore == "D") {DB.RankAnimalLore = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankAnimalLore == "D") {DB.RankAnimalLore = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankAnimalLore == "C") {DB.RankAnimalLore = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankAnimalLore == "C") {DB.RankAnimalLore = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankAnimalLore == "B") {DB.RankAnimalLore = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankAnimalLore == "B") {DB.RankAnimalLore = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankAnimalLore == "A") {DB.RankAnimalLore = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankAnimalLore == "A") {DB.RankAnimalLore = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1707,22 +1744,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.ArmsLore];
 				int skillvalue = DB.SkillrankexpArmsLore;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankArmsLore == "F") {DB.RankArmsLore = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankArmsLore == "F") {DB.RankArmsLore = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankArmsLore == "E") {DB.RankArmsLore = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankArmsLore == "E") {DB.RankArmsLore = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankArmsLore == "D") {DB.RankArmsLore = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankArmsLore == "D") {DB.RankArmsLore = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankArmsLore == "C") {DB.RankArmsLore = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankArmsLore == "C") {DB.RankArmsLore = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankArmsLore == "B") {DB.RankArmsLore = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankArmsLore == "B") {DB.RankArmsLore = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankArmsLore == "A") {DB.RankArmsLore = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankArmsLore == "A") {DB.RankArmsLore = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1737,22 +1774,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Forensics];
 				int skillvalue = DB.SkillrankexpForensics;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankForensics == "F") {DB.RankForensics = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankForensics == "F") {DB.RankForensics = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankForensics == "E") {DB.RankForensics = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankForensics == "E") {DB.RankForensics = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankForensics == "D") {DB.RankForensics = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankForensics == "D") {DB.RankForensics = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankForensics == "C") {DB.RankForensics = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankForensics == "C") {DB.RankForensics = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankForensics == "B") {DB.RankForensics = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankForensics == "B") {DB.RankForensics = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankForensics == "A") {DB.RankForensics = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankForensics == "A") {DB.RankForensics = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1767,22 +1804,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.ItemID];
 				int skillvalue = DB.SkillrankexpItemID;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankItemID == "F") {DB.RankItemID = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankItemID == "F") {DB.RankItemID = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankItemID == "E") {DB.RankItemID = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankItemID == "E") {DB.RankItemID = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankItemID == "D") {DB.RankItemID = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankItemID == "D") {DB.RankItemID = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankItemID == "C") {DB.RankItemID = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankItemID == "C") {DB.RankItemID = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankItemID == "B") {DB.RankItemID = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankItemID == "B") {DB.RankItemID = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankItemID == "A") {DB.RankItemID = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankItemID == "A") {DB.RankItemID = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1797,22 +1834,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.TasteID];
 				int skillvalue = DB.SkillrankexpTasteID;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankTasteID == "F") {DB.RankTasteID = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankTasteID == "F") {DB.RankTasteID = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankTasteID == "E") {DB.RankTasteID = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankTasteID == "E") {DB.RankTasteID = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankTasteID == "D") {DB.RankTasteID = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankTasteID == "D") {DB.RankTasteID = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankTasteID == "C") {DB.RankTasteID = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankTasteID == "C") {DB.RankTasteID = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankTasteID == "B") {DB.RankTasteID = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankTasteID == "B") {DB.RankTasteID = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankTasteID == "A") {DB.RankTasteID = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankTasteID == "A") {DB.RankTasteID = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1827,22 +1864,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Throwing];
 				int skillvalue = DB.SkillrankexpThrowing;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankThrowing == "F") {DB.RankThrowing = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankThrowing == "F") {DB.RankThrowing = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankThrowing == "E") {DB.RankThrowing = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankThrowing == "E") {DB.RankThrowing = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankThrowing == "D") {DB.RankThrowing = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankThrowing == "D") {DB.RankThrowing = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankThrowing == "C") {DB.RankThrowing = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankThrowing == "C") {DB.RankThrowing = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankThrowing == "B") {DB.RankThrowing = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankThrowing == "B") {DB.RankThrowing = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankThrowing == "A") {DB.RankThrowing = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankThrowing == "A") {DB.RankThrowing = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1857,22 +1894,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Imbuing];
 				int skillvalue = DB.SkillrankexpImbueing;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankImbueing == "F") {DB.RankImbueing = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankImbueing == "F") {DB.RankImbueing = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankImbueing == "E") {DB.RankImbueing = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankImbueing == "E") {DB.RankImbueing = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankImbueing == "D") {DB.RankImbueing = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankImbueing == "D") {DB.RankImbueing = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankImbueing == "C") {DB.RankImbueing = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankImbueing == "C") {DB.RankImbueing = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankImbueing == "B") {DB.RankImbueing = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankImbueing == "B") {DB.RankImbueing = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankImbueing == "A") {DB.RankImbueing = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankImbueing == "A") {DB.RankImbueing = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
@@ -1887,22 +1924,22 @@ namespace Server
 				Skill skill = from.Skills[SkillName.Mysticism];
 				int skillvalue = DB.SkillrankexpMysticism;
 				SkillName skillName = skill.SkillName;
-				if (DB.RankMysticism == "F") {DB.RankMysticism = "E"; skill.Cap = ecap; from.SendMessage("You have ranked up {0}", skillName);}
+				if (DB.RankMysticism == "F") {DB.RankMysticism = "E"; SkillStatCapUpdateE(skill); from.SendMessage("You have ranked up {0}", skillName);}
 				if (skillvalue > RankE)
 				{
-					if (DB.RankMysticism == "E") {DB.RankMysticism = "D"; skill.Cap = dcap; from.SendMessage("You have ranked up {0}", skillName);}
+					if (DB.RankMysticism == "E") {DB.RankMysticism = "D"; SkillStatCapUpdateD(skill); from.SendMessage("You have ranked up {0}", skillName);}
 					if (skillvalue > RankD)
 					{
-						if (DB.RankMysticism == "D") {DB.RankMysticism = "C"; skill.Cap = ccap; from.SendMessage("You have ranked up {0}", skillName);}
+						if (DB.RankMysticism == "D") {DB.RankMysticism = "C"; SkillStatCapUpdateC(skill); from.SendMessage("You have ranked up {0}", skillName);}
 						if (skillvalue > RankC)
 						{
-							if (DB.RankMysticism == "C") {DB.RankMysticism = "B"; skill.Cap = bcap; from.SendMessage("You have ranked up {0}", skillName);}
+							if (DB.RankMysticism == "C") {DB.RankMysticism = "B"; SkillStatCapUpdateB(skill); from.SendMessage("You have ranked up {0}", skillName);}
 							if (skillvalue > RankB)
 							{
-								if (DB.RankMysticism == "B") {DB.RankMysticism = "A"; skill.Cap = acap; from.SendMessage("You have ranked up {0}", skillName);}
+								if (DB.RankMysticism == "B") {DB.RankMysticism = "A"; SkillStatCapUpdateA(skill); from.SendMessage("You have ranked up {0}", skillName);}
 								if (skillvalue > RankA)
 								{
-									if (DB.RankMysticism == "A") {DB.RankMysticism = "S"; skill.Cap = scap; from.SendMessage("You have ranked up {0}", skillName);}
+									if (DB.RankMysticism == "A") {DB.RankMysticism = "S"; SkillStatCapUpdateS(skill); from.SendMessage("You have ranked up {0}", skillName);}
 									if (skillvalue > RankS)
 									{
 									}
