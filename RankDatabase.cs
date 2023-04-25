@@ -229,11 +229,11 @@ namespace Server.Items
 		private int m_totalskillpoints = 50;
 		private int m_age;
 		public string m_customtitle = "";
-		private int m_l2to20multipier		= 100;		// leve 2 to level 20 
-		private int m_l21to40multiplier		= 200;		// leve 21 to level 40 
-		private int m_l41to60multiplier		= 400;		// leve 41 to level 60 
-		private int m_l61to70multiplier		= 700;		// leve 61 to level 70 
-		private int m_l71to80multiplier		= 900;		// leve 71 to level 80 
+		private int m_l2to20multipier		= 50;		// leve 2 to level 20 
+		private int m_l21to40multiplier		= 100;		// leve 21 to level 40 
+		private int m_l41to60multiplier		= 300;		// leve 41 to level 60 
+		private int m_l61to70multiplier		= 400;		// leve 61 to level 70 
+		private int m_l71to80multiplier		= 500;		// leve 71 to level 80 
 		private int m_l81to90multipier		= 1100;		// leve 81 to level 90 
 		private int m_l91to100multipier		= 1300;		// leve 91 to level 100 
 		private int m_l101to110multiplier	= 1500;		// leve 101 to level 110 
