@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using Server;
 using Server.Gumps;
+using Server.Misc;
 using Server.Mobiles;
 using Server.Network;
 using System.Collections;
@@ -34,7 +35,9 @@ namespace Server.Items
 
 			RankFeatures.SkillRankGainerTarget(from, skill, skillName);
 
-			return true;
+			
+			return SkillCheck.Mobile_SkillCheckDirectTarget(  from,  skillName,  target,  chance );
+
 		}
 		
 		public static bool Mobile_SkillCheckDirectLocation( Mobile from, SkillName skillName, double chance )
@@ -46,7 +49,7 @@ namespace Server.Items
 			
 			RankFeatures.SkillRankGainer(from, skill, skillName);
 			
-			return true;
+			return SkillCheck.Mobile_SkillCheckDirectLocation(  from,  skillName,  chance );
 		}
 		public static bool Mobile_SkillCheckLocation( Mobile from, SkillName skillName, double minSkill, double maxSkill )
 		{
@@ -57,7 +60,7 @@ namespace Server.Items
 			
 			RankFeatures.SkillRankGainer(from, skill, skillName);
 
-			return true;
+			return SkillCheck.Mobile_SkillCheckLocation(  from,  skillName,  minSkill,  maxSkill );
 		}
 		
 		public static bool Mobile_SkillCheckTarget( Mobile from, SkillName skillName, object target, double minSkill, double maxSkill )
@@ -70,7 +73,7 @@ namespace Server.Items
 			RankFeatures.SkillRankGainerTarget(from, skill, skillName);
 
 
-			return true;
+			return SkillCheck.Mobile_SkillCheckTarget(  from,  skillName,  target,  minSkill,  maxSkill );
 		}
 		private static void EventSink_CastSpellRequest( CastSpellRequestEventArgs e )
 		{/* May be used for future  */
